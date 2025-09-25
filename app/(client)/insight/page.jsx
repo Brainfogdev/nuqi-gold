@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 const BLOGS_ENDPOINT = "http://150.129.118.10:7000/blog/getblog";
@@ -109,7 +110,9 @@ const page = async () => {
                   {blog.title}
                 </h1>
                 <p className="my-5">{blog.snippet}</p>
-                <Button className="text-lg p-5">Read More</Button>
+                <Button className="text-lg p-5" asChild>
+                  <Link href={`/insight/${blog.id ?? "#"}`}>Read More</Link>
+                </Button>
               </div>
             ))}
           </div>

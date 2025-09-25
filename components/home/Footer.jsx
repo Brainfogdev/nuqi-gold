@@ -1,9 +1,13 @@
+"use client";
+
 import React from "react";
 import Container from "../Container";
 import { Logo } from "../Navbar";
 import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import CallToAction from "./CallToAction";
+
+const ETHICAL_CERTIFICATE_PATH = "/pdf/nuqi_gold_ethical_certificate.pdf";
 
 const links = [
   {
@@ -23,7 +27,7 @@ const links = [
     label: "Legal",
   },
   {
-    herf: `/legal/NUQI-GOLD-Ethical-Certificate-.pdf`,
+    herf: ETHICAL_CERTIFICATE_PATH,
     label: "Ethical Certificate",
   },
   {
@@ -31,6 +35,19 @@ const links = [
     label: "Contact",
   },
 ];
+
+const handleCertificateClick = (event) => {
+  event.preventDefault();
+
+  window.open(ETHICAL_CERTIFICATE_PATH, "_blank", "noopener,noreferrer");
+
+  const tempLink = document.createElement("a");
+  tempLink.href = ETHICAL_CERTIFICATE_PATH;
+  tempLink.download = "NUQI-GOLD-Ethical-Certificate.pdf";
+  document.body.appendChild(tempLink);
+  tempLink.click();
+  document.body.removeChild(tempLink);
+};
 
 const Footer = () => {
   return (
@@ -47,8 +64,16 @@ const Footer = () => {
           </div>
           <div className="flex flex-col text-center sm:flex-row  sm:gap-8 my-5 mt-8">
             {links.map((item, index) => {
+              const isCertificate = item.herf === ETHICAL_CERTIFICATE_PATH;
+
               return (
-                <Link key={index} href={item.herf}>
+                <Link
+                  key={index}
+                  href={item.herf}
+                  onClick={isCertificate ? handleCertificateClick : undefined}
+                  target={isCertificate ? "_blank" : undefined}
+                  rel={isCertificate ? "noopener noreferrer" : undefined}
+                >
                   {item.label}
                 </Link>
               );

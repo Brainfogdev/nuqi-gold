@@ -13,7 +13,7 @@ const Features = () => {
           and unparalleled user experience.
         </p>
       </div>
-      <Container className={"my-10 grid gap-10 sm:grid-cols-3"}>
+      <Container className={"my-10 grid gap-2 sm:grid-cols-3"}>
         <div className=" flex flex-col gap-7">
           <FeaturesCard
             label={"Gold Account Access"}
@@ -36,10 +36,10 @@ const Features = () => {
             side={"right"}
           />
         </div>
-        <div className="">
+        <div className="  ">
           <div className="relative w-full sm:max-w-[600px] mx-auto aspect-[9/16] overflow-hidden">
             <video
-              className=" h-[600px] object-cover"
+              className=" h-[530px] object-cover "
               autoPlay
               loop
               muted

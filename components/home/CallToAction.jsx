@@ -44,7 +44,7 @@ const CallToAction = () => {
                   className="p-5 bg-gradient-to-tr from-nuqi-bgfade to-nuqi-bgdark rounded-xl"
                   height={80}
                   width={80}
-                  src={"/brand/playstore.svg"}
+                  src={"/brand/playstore2.svg"}
                   alt="Google Playstore"
                 />
                 </Link>
@@ -53,7 +53,7 @@ const CallToAction = () => {
                   className="p-5 bg-gradient-to-tr from-nuqi-bgfade to-nuqi-bgdark rounded-xl"
                   height={80}
                   width={80}
-                  src={"/brand/apple.svg"}
+                  src={"/brand/apple2.svg"}
                   alt="Apple Appstore"
                 />
                 </Link>

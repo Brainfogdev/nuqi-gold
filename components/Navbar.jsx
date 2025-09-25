@@ -26,7 +26,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="bg-[#f0f0f0] border-b ">
+    <div className="bg-white border-b">
       <Container className="py-3 flex justify-between items-center">
         <Logo  />
         <div className="gap-8 hidden sm:flex">

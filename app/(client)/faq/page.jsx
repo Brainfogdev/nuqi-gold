@@ -40,7 +40,7 @@ const QuestCard = ({ question, answer }) => {
   return (
     <div className="p-6 group hover:bg-gradient-to-tr hover:from-nuqi-bgfade hover:to-nuqi-bgdark rounded-xl border shadow-lg">
       <h1 className="text-xl group-hover:text-nuqi-gold font-semibold mb-4">{question}</h1>
-      <p>{answer}</p>
+      <p className="group-hover:text-white">{answer}</p>
     </div>
   );
 };

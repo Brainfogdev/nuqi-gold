@@ -57,11 +57,12 @@ const page = () => {
       <WhySection />
       <section className="w-full ">
         <Container className={"flex flex-col sm:flex-row  gap-10 sm:gap-32 items-center justify-between"}>
-          <div className="w-[340px] h-[340px] sm:h-[600px] relative  sm:w-[580px]">
+          <div className="w-[340px] h-[340px] sm:h-[500px] relative  sm:w-[580px]">
             <Image
-              src={"/brand/screen3.png"}
+              src={"/brand/screen2.png"}
               className="rounded-[3rem] border"
               fill
+              // height={300}
               alt="nuqi gold screen1"
             />
           </div>

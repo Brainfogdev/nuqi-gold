@@ -3,10 +3,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
-*{
- border: 2px solid red;
-} */
+
+/* *{
+ outline: .5px solid black;
+}  */
 
 body {
   font-family: 'Poppins' , Arial, Helvetica, sans-serif;

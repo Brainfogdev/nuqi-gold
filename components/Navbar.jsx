@@ -21,26 +21,46 @@ const Navbar = () => {
 
   console.log(pathname);
 
-  const isActive = (path)=>{
-    return pathname === path
-  }
+  const isActive = (path) => {
+    return pathname === path;
+  };
 
   return (
-    <div className="bg-white border-b">
+    <div className="sticky top-0 z-50 bg-white border-b">
       <Container className="py-3 flex justify-between items-center">
-        <Logo  />
+        <Logo />
         <div className="gap-8 hidden sm:flex">
           {links.map((link, index) => {
             return (
-              <Link key={index} href={link.path} className={`${isActive(link.path) ? 'font-semibold text-nuqi-bgdark' :'text-gray-500' }`}>
+              <Link
+                key={index}
+                href={link.path}
+                className={`${isActive(link.path) ? "font-semibold text-nuqi-bgdark" : "text-gray-500"}`}
+              >
                 {link.label}
               </Link>
             );
           })}
         </div>
         <div className=" hidden gap-5">
-            <Link href={'/'} className={cn(buttonVariants(),'rounded-full px-8 text-black border shadow-none border-nuqi-bgdark hover:bg-slate-100 bg-transparent')}>Sign Up</Link>
-            <Link href={'/'} className={cn(buttonVariants(),'rounded-full px-8 text-nuqi-gold ')}>Login</Link>
+          <Link
+            href={"/"}
+            className={cn(
+              buttonVariants(),
+              "rounded-full px-8 text-black border shadow-none border-nuqi-bgdark hover:bg-slate-100 bg-transparent"
+            )}
+          >
+            Sign Up
+          </Link>
+          <Link
+            href={"/"}
+            className={cn(
+              buttonVariants(),
+              "rounded-full px-8 text-nuqi-gold "
+            )}
+          >
+            Login
+          </Link>
         </div>
         <div className="block sm:hidden">
           <MobileMenu />
@@ -52,10 +72,15 @@ const Navbar = () => {
 
 export default Navbar;
 
-export const Logo = ({height,width}) => {
+export const Logo = ({ height, width }) => {
   return (
     <div className="">
-      <Image alt="" height={height || 120} width={width || 120} src={"/brand/logo.svg"} />
+      <Image
+        alt=""
+        height={height || 120}
+        width={width || 120}
+        src={"/brand/logo.svg"}
+      />
     </div>
   );
 };

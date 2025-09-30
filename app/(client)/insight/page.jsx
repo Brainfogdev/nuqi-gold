@@ -1,5 +1,4 @@
 import Container from "@/components/Container";
-import React from "react";
 import BlogCarousel from "./BlogCarousel";
 
 const BLOGS_ENDPOINT = "http://150.129.118.10:7000/blog/getblog";
@@ -97,7 +96,7 @@ const page = async () => {
             Expert Insights,& Market Trends
           </span>
         </h1>
-        <div className="mt-10">
+        <div className="my-10">
           <BlogCarousel blogs={cardsToRender} />
         </div>
       </Container>

@@ -76,24 +76,34 @@ export default async function InsightDetailsPage({ params }) {
   return (
     <section>
       <Container className="py-20 space-y-10">
-        <header className="space-y-3">
-          <p className="text-sm text-gray-400 uppercase tracking-wide">
-            Insights
-          </p>
-          <h1 className="text-4xl font-semibold text-nuqi-gold">
-            {blog.title}
-          </h1>
-          <p className="text-gray-400 text-sm">
-            By {blog.author ?? "Team Nuqi"}
-          </p>
-        </header>
+        <div className="flex flex-col gap-8 md:flex-row md:items-start">
+          <header className="flex-1 space-y-3">
+            <p className="text-sm uppercase tracking-wide text-gray-400">
+              Insights
+            </p>
+            <h1 className="text-4xl font-semibold text-nuqi-gold">
+              {blog.title}
+            </h1>
+            <p className="text-sm text-gray-400">
+              By {blog.author ?? "Team Nuqi"}
+            </p>
+          </header>
 
-        <div className="overflow-hidden rounded-2xl">
-          <img
-            src={blog.imageurl}
-            alt={blog.title}
-            className="w-full h-80 object-cover"
-          />
+          <div className="md:w-[28%] lg:w-[22%] xl:w-[20%] -ml-2 md:-ml-6 lg:-ml-8 xl:-ml-10">
+            <div className="relative w-full overflow-hidden rounded-2xl bg-gray-100 aspect-square max-h-[220px]">
+              {blog.imageurl ? (
+                <img
+                  src={blog.imageurl}
+                  alt={blog.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center text-sm text-gray-400">
+                  Image unavailable
+                </div>
+              )}
+            </div>
+          </div>
         </div>
 
         <article className="space-y-6 text-lg leading-relaxed text-gray-700">

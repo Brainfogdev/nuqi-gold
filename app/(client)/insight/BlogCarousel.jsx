@@ -48,20 +48,22 @@ const BlogCarousel = ({ blogs }) => {
         {visibleBlogs.map((blog) => (
           <div
             key={blog.id ?? blog.title}
-            className="flex flex-col justify-between p-8 transition-all duration-300 border rounded-xl group hover:-translate-y-1 hover:bg-gradient-to-tr hover:from-nuqi-bgfade hover:to-nuqi-bgdark hover:text-white"
+            className="flex flex-col justify-between gap-6 p-8 transition-all duration-300 border rounded-xl group hover:-translate-y-1 hover:bg-gradient-to-tr hover:from-nuqi-bgfade hover:to-nuqi-bgdark hover:text-white"
           >
-            <div className="space-y-4">
-              <h2 className="text-xl font-medium group-hover:text-nuqi-gold">
-                {blog.title}
-              </h2>
-              <p className="text-base leading-relaxed text-muted-foreground group-hover:text-white/90">
-                {blog.snippet}
-              </p>
+            <div className="flex flex-col gap-6">
+              <div className="space-y-4">
+                <h2 className="text-xl font-medium group-hover:text-nuqi-gold">
+                  {blog.title}
+                </h2>
+                <p className="text-base leading-relaxed text-muted-foreground group-hover:text-white/90">
+                  {blog.snippet}
+                </p>
+              </div>
             </div>
-            <div className="mt-6">
+            <div>
               <Button
                 asChild
-                className="px-6 py-4 text-lg group-hover:bg-nuqi-gold group-hover:text-white"
+                className="px-6 py-4 text-lg hover:bg-nuqi-gold hover:text-white hover:bg-none group-hover:bg-nuqi-gold group-hover:text-white group-hover:bg-none"
               >
                 <Link href={`/insight/${blog.id ?? "#"}`}>Read More</Link>
               </Button>

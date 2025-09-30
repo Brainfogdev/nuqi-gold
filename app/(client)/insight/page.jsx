@@ -1,8 +1,6 @@
 import Container from "@/components/Container";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import Link from "next/link";
 import React from "react";
+import BlogCarousel from "./BlogCarousel";
 
 const BLOGS_ENDPOINT = "http://150.129.118.10:7000/blog/getblog";
 
@@ -88,7 +86,7 @@ const page = async () => {
     console.error("Failed to load blogs:", error);
   }
 
-  const cardsToRender = (blogs.length ? blogs : FALLBACK_BLOGS).slice(0, 3);
+  const cardsToRender = blogs.length ? blogs : FALLBACK_BLOGS;
 
   return (
     <section>
@@ -99,31 +97,8 @@ const page = async () => {
             Expert Insights,& Market Trends
           </span>
         </h1>
-        <div>
-          <div className="flex sm:flex-row flex-col my-10 gap-5">
-            {cardsToRender.map((blog) => (
-              <div
-                key={blog.id ?? blog.title}
-                className="p-8 rounded-xl group border hover:bg-gradient-to-tr hover:from-nuqi-bgfade hover:to-nuqi-bgdark hover:text-white "
-              >
-                <h1 className="text-xl font-medium group-hover:text-nuqi-gold ">
-                  {blog.title}
-                </h1>
-                <p className="my-5">{blog.snippet}</p>
-                <Button className="text-lg p-5" asChild>
-                  <Link href={`/insight/${blog.id ?? "#"}`}>Read More</Link>
-                </Button>
-              </div>
-            ))}
-          </div>
-          <div className="flex gap-5">
-            <button className="p-2 text-lg border rounded-full">
-              <ChevronLeft />
-            </button>
-            <button className="p-2 text-lg border rounded-full">
-              <ChevronRight />
-            </button>
-          </div>
+        <div className="mt-10">
+          <BlogCarousel blogs={cardsToRender} />
         </div>
       </Container>
     </section>

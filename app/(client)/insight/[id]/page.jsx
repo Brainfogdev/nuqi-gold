@@ -88,6 +88,14 @@ export default async function InsightDetailsPage({ params }) {
           </p>
         </header>
 
+        <div className="overflow-hidden rounded-2xl">
+          <img
+            src={blog.imageurl}
+            alt={blog.title}
+            className="w-full h-80 object-cover"
+          />
+        </div>
+
         <article className="space-y-6 text-lg leading-relaxed text-gray-700">
           {paragraphs.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>

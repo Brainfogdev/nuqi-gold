@@ -36,31 +36,34 @@ const HeroSection = () => {
                 </h4>
                 <div className="flex gap-5 flex-col mt-5">
                   <Link
-                    href={
-                      "https://play.google.com/store/apps/details?id=app.nuqigold.com"
-                    }
+                    href={'https://play.google.com/store/apps/details?id=app.nuqigold.com'}
                     className={cn(buttonVariants(), "p-8 py-9 rounded-xl")}
                   >
                     <Image
                       alt="playstore"
                       src={"/brand/playstore.svg"}
-                      height={200}
-                      width={200}
+                      height={30}
+                      width={30}
                     />
+                    <div className="flex -gap-5 flex-col">
+                      <p>Available On</p>
+                      <h4 className="text-lg">Google Playstore</h4>
+                    </div>
                   </Link>
                   <Link
-                    href={
-                      "https://apps.apple.com/in/app/nuqi-gold/id6711336841"
-                    }
+                    href={"https://apps.apple.com/in/app/nuqi-gold/id6711336841"}
                     className={cn(buttonVariants(), "p-8 py-9 rounded-xl")}
                   >
                     <Image
-                      className=""
                       alt="playstore"
                       src={"/brand/apple.svg"}
-                      height={290}
-                      width={290}
+                      height={30}
+                      width={30}
                     />
+                    <div className="flex -gap-5 flex-col">
+                      <p>Available On</p>
+                      <h4 className="text-lg">Apple Appstore</h4>
+                    </div>
                   </Link>
                 </div>
               </div>
